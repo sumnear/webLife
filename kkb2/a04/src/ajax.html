@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = ()=>{
+            let oBtn = document.getElementById("btn1");
+            oBtn.onclick = ()=>{
+                 let xmlhttp= null;
+                if(window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }else{
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
+                }
+                console.info(xmlhttp);
+
+                //open设置请求方式和请求路径
+                //连接 true 异步，false 同步
+                xmlhttp.open("get", "/Ajax/ajax2" ,true);//一个servlet，后面还可以写是否同步
+                //设置请求头
+                xmlhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded")
+                //send 发送
+                xmlhttp.send("username=张三");
+                //接收 编写回调函数
+                xmlhttp.onreadystatechange = function() {
+                    // alert(xmlhttp.readyState);
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        alert(xmlhttp.responseText)
+                    }
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+        <input id="btn1" type="button" value="aaa">
+
+</body>
+</html>
