@@ -1,13 +1,14 @@
 const http=require('http');
 const fs=require('fs');
 
-let server=http.createServer((req, res)=>{
-  fs.readFile(`www${req.url}`, (err, data)=>{
+let server= http.createServer((req, res)=>{
+  fs.readFile(__dirname+`/www${req.url}`, (err, data)=>{
     if(err){
-      res.write('404');     //?
+      res.write('404');     //不够好
     }else{
       res.write(data);
     }
+
     res.end();
   });
 });

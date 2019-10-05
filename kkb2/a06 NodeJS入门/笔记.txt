@@ -3,7 +3,7 @@ NodeJS
 2.断言——assert
 3.二进制——Buffer
   File System
-4.C++ Addons
+4.C++ Addons 可以用C语言写插件
 5.多进程
   Child Processes
   Cluster
