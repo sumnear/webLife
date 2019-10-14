@@ -67,7 +67,8 @@ DELETE
 设计数据库有什么需要注意的点
 
 
-ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to usenear 'delete from users where id = 3'哪里错了，没看出来
+ER_PARSE_ERROR: You have an error in your SQL syntax;
+check the manual that corresponds to your MySQL server version for the right syntax to usenear 'delete from users where id = 3'哪里错了，没看出来
 
 
 

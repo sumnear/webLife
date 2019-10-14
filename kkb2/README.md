@@ -36,4 +36,8 @@
     - 数据解析
     - 流操作
     - GZ压缩
-09. NodeJS进阶下
+09. NodeJS进阶下   2019-10-06 10：00
+10. NodeJS使用Mysql、socket.io入门
+11. websocket原理     2019-10-06 22：30
+12. Ajax2.0-FormData和Cors 2019-10-09 23：57
+13. upload和FileReade 2019-10-14 19：40  第二集未看

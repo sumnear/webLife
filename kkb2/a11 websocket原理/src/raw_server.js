@@ -20,7 +20,7 @@ let server=net.createServer(sock=>{
     let lines=str.split('\r\n');
 
     //舍弃第一行和最后两行
-    lines=lines.slice(1, lines.length-2);
+    // lines=lines.slice(1, lines.length-2);
 
     //切开
     let headers={};
@@ -58,7 +58,7 @@ let server=net.createServer(sock=>{
       sock.on('data', data=>{
         console.log('有数据');
 
-        console.log(data);
+        console.log(data.toString());
       });
     }
   });
