@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    class Obj{
+      constructor(){
+        this.a=12;
+
+        document.onclick=this.show.bind(this);
+      }
+
+      show(){
+        alert(this.a);
+      }
+    }
+
+    new Obj();
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/browser.js" charset="utf-8"></script>
+    <script src="js/react.js" charset="utf-8"></script>
+    <script src="js/react-dom.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1"></div>
+  </body>
+  <script type="text/babel">
+  //React组件(React Component)
+  class Aaa extends React.Component{
+    constructor(...args){
+      super(...args);
+    }
+
+    render(){
+      let aLi=[];
+
+      this.props.data.forEach((num,index)=>{
+        let li=<li key={index}>{num}</li>;
+
+        aLi.push(li);
+      });
+
+      return <ul>
+        {aLi}
+      </ul>;
+    }
+  }
+
+  let oDiv=document.getElementById('div1');
+
+  ReactDOM.render(
+    <Aaa data={[12,5,8,99,32,27,99,32,27,99,32,27,99,32,27]}></Aaa>, oDiv
+  );
+  </script>
+</html>

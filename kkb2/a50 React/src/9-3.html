@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/browser.js" charset="utf-8"></script>
+    <script src="js/react.js" charset="utf-8"></script>
+    <script src="js/react-dom.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="div1"></div>
+  </body>
+  <script type="text/babel">
+  class ListItem extends React.Component{
+    constructor(...args){
+      super(...args);
+
+      this.state={
+        color: ''
+      };
+    }
+
+    fn(){
+      //this.state.color='red';
+      this.setState({
+        color: 'red'
+      });
+    }
+
+    render(){
+      return <li>
+        <input type="button" value="变红" onClick={this.fn.bind(this)} />
+        <h4 style={{color: this.state.color}}>{this.props.data.name} </h4>
+        <p>{this.props.data.pass}</p>
+      </li>;
+    }
+  }
+
+  class List extends React.Component{
+    constructor(...args){
+      super(...args);
+    }
+
+    render(){
+      return <ul>
+        {this.props.users.map((json,index)=><ListItem key={index} data={json}></ListItem>)}
+      </ul>;
+    }
+  }
+
+  let oDiv=document.getElementById('div1');
+
+  ReactDOM.render(
+    <List users={[
+      {name: 'blue', pass: '123456'},
+      {name: 'aaa', pass: '654321'},
+      {name: 'bbb', pass: '111111'},
+      {name: 'ccc', pass: '212423'},
+      {name: 'ddd', pass: 'sdfsdgf'},
+    ]}></List>, oDiv
+  );
+  </script>
+</html>
